@@ -1,12 +1,21 @@
-
 .bg-purple {
     background-color: #7330F9;
     color: white; 
 }
 
+.bg-dropmenu{
+    background-color: #651df7db;
+    font-size: 12px;
+}
+
 .ft-text{
     
     font-size: 12px;
+}
+
+.fs-nav{
+    font-size: 12px;
+    
 }
 
 .review{

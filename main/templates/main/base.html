@@ -12,38 +12,114 @@
     <title>ГОУ ЛНР "ДОНЦОВСКАЯ ОШ </title>
 </head>
 <body>
-
-  <header class="p-3 bg-purple text-white">
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="/admin">Link</a>
-    </li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-purple text-white fs-nav fw-bold nav-underline">
+    <div class="container-xxl">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="{% static "images/school.jpg" %}" class="d-block"  width="90" height="60">   
+          </div>
+          <div class="col">
+            <p class="fs-nav text-white fw-light text-center mt-2">ГОУ ЛНР<br>"ДОНЦОВСКАЯ ОШ"</p>
+          </div>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link text-{% block LinkViewMain %}{% endblock %}" aria-current="page" href="{% url 'home' %}">ГЛАВНАЯ</a>
+         </li>
         <li class="nav-item dropdown text-white">
-            <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
-            <ul class="dropdown-menu bg-purple">
-                <li><a class="dropdown-item text-white" href="#">Action</a></li>
-                <li><a class="dropdown-item text-white" href="#">Action</a></li>
-                <li><a class="dropdown-item text-white" href="#">Action</a></li>
-                
+          <a class="nav-link dropdown-toggle text-{% block LinkViewAbout %}{% endblock %}" data-bs-toggle="dropdown" role="button" aria-expanded="false">ОБ УЧРЕЖДЕНИИ</a>
+          <ul class="dropdown-menu bg-dropmenu">
+              <li><a class="dropdown-item text-white" href="{% url 'about' %}">ОСНОВНЫЕ СВЕДЕНИЯ</a></li> 
+              <li><a class="dropdown-item text-white" href="{% url 'about' %}">ИСТОРИЯ ШКОЛЫ</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'about' %}">РУКОВОДСТВО. ПЕДАГОГИЧЕСКИЙ СОСТАВ</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'about' %}">СТРУКТУРА И ОРГАНЫ УПРАВЛЕНИЯ</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'about' %}">ДОКУМЕНТЫ</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'about' %}">ОБРАЗОВАНИЕ </a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'about' %}">ОБРАЗОВАТЕЛЬНЫЙ ПРОЦЕСС</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'about' %}">ГОСЗАКУПКИ</a></li>      
+          </ul>
+        </li>
+        <li class="nav-item dropdown text-white">
+          <a class="nav-link dropdown-toggle text-{% block LinkViewStudents %}{% endblock %}" data-bs-toggle="dropdown" role="button" aria-expanded="false">ОБУЧАЮЩИМСЯ</a>
+          <ul class="dropdown-menu bg-dropmenu">
+              <li><a class="dropdown-item text-white" href="{% url 'students' %}">ПРАВА И ОБЯЗАННОСТИ</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'students' %}">БЕЗОПАСНОСТЬ ЖИЗНЕДЕЯТЕЛЬНОСТИ</a></li>   
+              <li><a class="dropdown-item text-white" href="{% url 'students' %}">ЭЛЕКТРОННЫЙ УЧЕБНИК</a></li>   
+              <li><a class="dropdown-item text-white" href="{% url 'students' %}">ЭЛЕКТРОННЫЙ ДНЕВНИК</a></li>   
+              <li><a class="dropdown-item text-white" href="{% url 'students' %}">ИНФОРМАЦИЯ</a></li>                  
+          </ul>
+        </li>
+        <li class="nav-item dropdown text-white">
+          <a class="nav-link dropdown-toggle text-{% block LinkViewParents %}{% endblock %}" data-bs-toggle="dropdown" role="button" aria-expanded="false">РОДИТЕЛЯМ</a>
+          <ul class="dropdown-menu bg-dropmenu">
+              <li><a class="dropdown-item text-white" href="{% url 'parents' %}">ПРИЕМ В 1 КЛАСС</a></li> 
+              <li><a class="dropdown-item text-white" href="{% url 'parents' %}">ПРАВА И ОБЯЗАННОСТИ</a></li> 
+              <li><a class="dropdown-item text-white" href="{% url 'parents' %}">ДЕЛОВОЙ СТИЛЬ В ОДЕЖДЕ</a></li> 
+              <li><a class="dropdown-item text-white" href="{% url 'parents' %}">СТОЛОВАЯ</a></li> 
+              <li><a class="dropdown-item text-white" href="{% url 'parents' %}">ИНФОРМАЦИЯ</a></li> 
+          </ul>
+        </li>
+        <li class="nav-item dropdown text-white">
+          <a class="nav-link dropdown-toggle text-{% block LinkViewTeachers %}{% endblock %}" data-bs-toggle="dropdown" role="button" aria-expanded="false">УЧИТЕЛЬСКАЯ</a>
+          <ul class="dropdown-menu bg-dropmenu">
+              <li><a class="dropdown-item text-white" href="{% url 'teachers' %}">МЕТОДИЧЕСКИЙ КАБИНЕТ</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'teachers' %}">МЕТОДИЧЕСКИЙ СОВЕТ</a></li>  
+              <li><a class="dropdown-item text-white" href="{% url 'teachers' %}">АТТЕСТАЦИЯ ПЕДАГОГИЧЕСКИХ РАБОТНИКОВ</a></li>  
+              <li><a class="dropdown-item text-white" href="{% url 'teachers' %}">ЭЛЕКТРОННЫЙ ЖУРНАЛ</a></li>  
+              <li><a class="dropdown-item text-white" href="{% url 'teachers' %}">ИНФОРМАЦИЯ</a></li>    
+          </ul>
+        </li>
+        <li class="nav-item dropdown text-white">
+          <a class="nav-link dropdown-toggle text-{% block LinkViewEducProc %}{% endblock %}" data-bs-toggle="dropdown" role="button" aria-expanded="false">УЧЕБНЫЙ ПРОЦЕСС</a>
+          <ul class="dropdown-menu bg-dropmenu">
+              <li><a class="dropdown-item text-white" href="{% url 'educProc' %}">УЧЕБНЫЙ ПЛАН НА ГОД</a></li> 
+              <li><a class="dropdown-item text-white" href="{% url 'educProc' %}">ДИСТАНЦИОННОЕ ОБУЧЕНИЕ</a></li>   
+              <li><a class="dropdown-item text-white" href="{% url 'educProc' %}">РАСПИСАНИЕ ЗАНЯТИЙ</a></li>   
+              <li><a class="dropdown-item text-white" href="{% url 'educProc' %}">РАСПИСАНИЕ ЗВОНКОВ</a></li>      
+              <li><a class="dropdown-item text-white" href="{% url 'educProc' %}">РАСПИСАНИЕ КРУЖКОВ</a></li>  
+              <li><a class="dropdown-item text-white" href="{% url 'educProc' %}">ВНЕКЛАССНАЯ РАБОТА ПО ПРЕДМЕТАМ</a></li>  
+              <li><a class="dropdown-item text-white" href="{% url 'educProc' %}">ОЛИМПИАДЫ</a></li>  
+              <li><a class="dropdown-item text-white" href="https://checkege.rustest.ru/">ГИА.ЕГЭ</a></li>              
+          </ul>
+        </li>
+        <li class="nav-item dropdown text-white">
+            <a class="nav-link dropdown-toggle text-{% block LinkViewEducProc2 %}{% endblock %}" data-bs-toggle="dropdown" role="button" aria-expanded="false">ВОСПИТАТЕЛЬНЫЙ ПРОЦЕСС</a>
+            <ul class="dropdown-menu bg-dropmenu">
+                <li><a class="dropdown-item text-white" href="{% url 'educProc2' %}">ЛЕТО</a></li> 
+                <li><a class="dropdown-item text-white" href="{% url 'educProc2' %}">ВОСПИТАТЕЛЬНАЯ РАБОТА</a></li> 
+                <li><a class="dropdown-item text-white" href="{% url 'educProc2' %}"> ПЛАН ВОСПИТАТЕЛЬНОЙ РАБОТЫ</a></li> 
+                <li><a class="dropdown-item text-white" href="{% url 'educProc2' %}">ВНЕКЛАССНАЯ И ВНЕУРОЧНАЯ ДЕЯТЕЛЬНОСТЬ</a></li> 
+                <li><a class="dropdown-item text-white" href="{% url 'educProc2' %}">САМОУПРАВЛЕНИЕ</a></li> 
+                <li><a class="dropdown-item text-white" href="{% url 'educProc2' %}">КОНКУРСЫ</a></li> 
+                <li><a class="dropdown-item text-white" href="{% url 'educProc2' %}">ФОТОГАЛЕРЕЯ</a></li> 
+                <li><a class="dropdown-item text-white" href="{% url 'educProc2' %}">ВЫСТАВКА</a></li> 
+                <li><a class="dropdown-item text-white" href="{% url 'educProc2' %}"> ИХ ИМЕНА-НАША ГОРДОСТЬ</a></li>                       
             </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled text-white" aria-disabled="true">Disabled</a>
-        </li>
-    </ul>
-</header>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-{% block LinkViewNews %}{% endblock %}" aria-current="page" href="{% url 'news' %}">НОВОСТИ</a>
+         </li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="navbar-brand d-none d-lg-block" href="{% url 'mail' %}">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <img width="40" height="35" src="https://img.icons8.com/ios-filled/50/FFFFFF/new-post.png" alt="new-post"/>
+        </div>
+      </div>
+    </a>
+    
+
+    
+  </nav>
 
 
    {% block content %}
@@ -72,8 +148,23 @@
     </div>
 
 
+  <script>
+    var dropdowns = document.querySelectorAll('.nav-item.dropdown');
+    dropdowns.forEach(function (dropdown) {
+      var link = dropdown.querySelector('.nav-link.dropdown-toggle');
+      var menu = dropdown.querySelector('.dropdown-menu');
+      link.addEventListener('mouseover', function() {
+        menu.style.display = 'block';
+      });
   
+      dropdown.addEventListener('mouseleave', function() {
+        menu.style.display = 'none';
+      });
+    });
+  </script>
+    
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 </html> 
+

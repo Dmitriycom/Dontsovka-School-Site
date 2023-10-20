@@ -1,0 +1,21 @@
+
+.bg-purple {
+    background-color: #7330F9;
+    color: white; 
+}
+
+.ft-text{
+    
+    font-size: 12px;
+}
+
+.review{
+    width: 630px;
+    height: 130px;
+    background-color: thistle;
+    padding-top: 5px;
+    padding-left: 5px;  
+}
+
+
+

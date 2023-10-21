@@ -12,7 +12,7 @@
     <title>ГОУ ЛНР "ДОНЦОВСКАЯ ОШ </title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-purple text-white fs-nav fw-bold nav-underline">
+  <nav class="shadow-lg navbar navbar-expand-lg navbar-light bg-purple text-white fs-nav fw-bold nav-underline border-bottom">
     <div class="container-xxl">
       <a class="navbar-brand" href="{% url 'home' %}">
         <div class="row align-items-center">
@@ -25,7 +25,7 @@
         </div>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon" ></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav ml-auto">
@@ -109,23 +109,21 @@
       </div>
     </div>
 
-    <a class="navbar-brand d-none d-lg-block" href="{% url 'mail' %}">
+    <a class="navbar-brand d-none d-lg-block pl-mail" href="{% url 'mail' %}">
       <div class="row align-items-center">
         <div class="col-auto">
           <img width="40" height="35" src="https://img.icons8.com/ios-filled/50/FFFFFF/new-post.png" alt="new-post"/>
         </div>
       </div>
     </a>
-    
 
-    
   </nav>
 
 
    {% block content %}
    {% endblock %}
 
-    <div class="fixed-bottom flex-wrap justify-content-center align-items-center py-3 border-top container-fluid bg-purple text-white border border-1 border-bottom-0">
+    <div class="shadow-lg card-footer sticky-bottom justify-content-center align-items-center py-3 border-top container-fluid bg-purple text-white border border-1 border-bottom-0" id="footer">
       <h3 class="text-center fw-bold mb-3">Контактная информация</h3>
       <ul class="text-center list-unstyled  ft-text">
         <li class=" mb-2">© ГОСУДАРСТВЕННОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ЛУГАНСКОЙ НАРОДНОЙ РЕСПУБЛИКИ
@@ -133,7 +131,7 @@
           <li class="mb-2"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-buildings mb-1" viewBox="0 0 16 16">
             <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022ZM6 8.694 1 10.36V15h5V8.694ZM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15Z"/>
             <path d="M2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-2 2h1v1H2v-1Zm2 0h1v1H4v-1Zm4-4h1v1H8V9Zm2 0h1v1h-1V9Zm-2 2h1v1H8v-1Zm2 0h1v1h-1v-1Zm2-2h1v1h-1V9Zm0 2h1v1h-1v-1ZM8 7h1v1H8V7Zm2 0h1v1h-1V7Zm2 0h1v1h-1V7ZM8 5h1v1H8V5Zm2 0h1v1h-1V5Zm2 0h1v1h-1V5Zm0-2h1v1h-1V3Z"/>
-          </svg> ЛНР, Новопсковский район, c Донцовка, улица Ленина, 22 </li>
+          </svg> ЛНР, Новопсковский район, cело Донцовка, улица Ленина, д. 55 </li>
           <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
             <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
           </svg> +79595253343</li>

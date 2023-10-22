@@ -1,2 +1,0 @@
-# DontsovkaSchool
- site for school

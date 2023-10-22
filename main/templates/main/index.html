@@ -26,71 +26,25 @@
       </a>
     </div>
 
-    <a href="{% url 'news' %}">
-      <a href=""></a>
-      <div class="row text-white justify-content-center d-flex mb-3">
-        <div class="col-md-8 themed-grid-col bg-light w-50 shadow-lg rounded border border-1">
-          <div class="row">
-            <div class="col-12 col-md-6 mt-2 mb-2">
-              <img src="{% static "images/school.jpg" %}" alt="Картинка новости" class="img-fluid" width="200" height="120">
-            </div>
-            <div class="col-12 col-md-6 text-black order-md-first d-flex flex-column">
-              <h3 class="text-start">Введение обновленных ФГОС: методический аспект</h3>
-              <p class="mt-auto text-start">20 октября 2023</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </a>
-
+    {% for item in news %}
     <a href="{% url 'news' %}">
       <div class="row text-white justify-content-center d-flex mb-3">
         <div class="col-md-8 themed-grid-col bg-light w-50 shadow-lg rounded border border-1">
           <div class="row">
             <div class="col-12 col-md-6 mt-2 mb-2">
-              <img src="{% static "images/school.jpg" %}" alt="Картинка новости" class="img-fluid" width="200" height="120">
+              <img src="{% static 'images/img_news/'%}{{item.path}}" alt="Картинка новости" class="img-fluid" width="200" height="120">
             </div>
             <div class="col-12 col-md-6 text-black order-md-first d-flex flex-column">
-              <h3 class="text-start">Введение обновленных ФГОС: методический аспект</h3>
-              <p class="mt-auto text-start">20 октября 2023</p>
+              <h3 class="text-start text-truncate overflow-hidden">{{ item.title }}</h3>
+              <p class="mt-auto text-start">{{ item.date }}</p>
             </div>
           </div>
         </div>
       </div>
     </a>
-
-    <a href="{% url 'news' %}">
-      <div class="row text-white justify-content-center d-flex mb-3">
-        <div class="col-md-8 themed-grid-col bg-light w-50 shadow-lg rounded border border-1">
-          <div class="row">
-            <div class="col-12 col-md-6 mt-2 mb-2">
-              <img src="{% static "images/school.jpg" %}" alt="Картинка новости" class="img-fluid" width="200" height="120">
-            </div>
-            <div class="col-12 col-md-6 text-black order-md-first d-flex flex-column">
-              <h3 class="text-start">Введение обновленных ФГОС: методический аспект</h3>
-              <p class="mt-auto text-start">20 октября 2023</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <a href="{% url 'news' %}">
-      <div class="row text-white justify-content-center d-flex mb-3">
-        <div class="col-md-8 themed-grid-col bg-light w-50 shadow-lg rounded border border-1">
-          <div class="row">
-            <div class="col-12 col-md-6 mt-2 mb-2">
-              <img src="{% static "images/school.jpg" %}" alt="Картинка новости" class="img-fluid" width="200" height="120">
-            </div>
-            <div class="col-12 col-md-6 text-black order-md-first d-flex flex-column">
-              <h3 class="text-start">Введение обновленных ФГОС: методический аспект</h3>
-              <p class="mt-auto text-start">20 октября 2023</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </a>
-
+    
+    {% endfor %}
+    
    
 
   </div>

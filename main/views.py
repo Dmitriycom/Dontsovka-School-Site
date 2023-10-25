@@ -18,13 +18,26 @@ def teachers(request):
     return render(request, "main/teachers.html")
 
 def educProc(request):
-    return render(request, "main/educProc.html")
+    try:
+        page = int(request.GET.get("page", 0))
+        number = int(request.GET.get("number", 0))
+    except:
+        page = 2
+        number = 1
+    return render(request, "main/educProc.html", {"page": page, "number": number})
 
 def educProc2(request):
     return render(request, "main/educProc2.html")
 
-def news(request):
-    return render(request, "main/news.html")
+def news(request, newId=1):
+    try:
+        id = int(newId)
+        new = News.objects.get(pk=id)
+    except:
+        id = 1
+        news = News.objects.get(pk=id)
+    news = News.objects.exclude(pk=id)
+    return render(request, "main/news.html", {"new": new, "news": news})
 
 def mail(request):
     return render(request, "main/mail.html")

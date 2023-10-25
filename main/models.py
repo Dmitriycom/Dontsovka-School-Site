@@ -1,4 +1,5 @@
-from django.db import models
+from django.db import models 
+
 
 class News(models.Model):
     title = models.CharField('Заголовок', max_length=200)
@@ -9,3 +10,4 @@ class News(models.Model):
 
     def __str__(self) -> str:
         return self.title
+

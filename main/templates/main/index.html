@@ -27,30 +27,22 @@
     </div>
 
     {% for item in news %}
-    <a href="{% url 'news' %}">
       <div class="row text-white justify-content-center d-flex mb-3">
-        <div class="col-md-8 themed-grid-col bg-light w-50 shadow-lg rounded border border-1">
-          <div class="row">
-            <div class="col-12 col-md-6 mt-2 mb-2">
-              <img src="{% static 'images/img_news/'%}{{item.path}}" alt="Картинка новости" class="img-fluid" width="200" height="120">
+              <div class="col-md-8 themed-grid-col bg-light w-50 shadow-lg rounded border border-1">
+                <a href="news/{{item.id}}">
+                  <div class="row">
+                    <div class="col-12 col-md-6 mt-2 mb-2">
+                      <img src="{% static 'images/img_news/'%}{{item.path}}" alt="Картинка новости" class="img-fluid" width="200" height="120">
+                    </div>
+                    <div class="col-12 col-md-6 text-black order-md-first d-flex flex-column">
+                      <h3 class="text-start text-truncate overflow-hidden">{{ item.title }}</h3>
+                      <p class="text-start" style="max-height: 100px; overflow-y: auto;">{{ item.description }}</p>
+                      <p class="mt-auto text-start">{{ item.date }}</p>
+                    </div>
+                  </div>
+                </a>
             </div>
-            <div class="col-12 col-md-6 text-black order-md-first d-flex flex-column">
-              <h3 class="text-start text-truncate overflow-hidden">{{ item.title }}</h3>
-              <p class="mt-auto text-start">{{ item.date }}</p>
-            </div>
-          </div>
-        </div>
       </div>
-    </a>
-    
     {% endfor %}
-    
-   
-
   </div>
-
-
-  
-  
-
 {% endblock %}

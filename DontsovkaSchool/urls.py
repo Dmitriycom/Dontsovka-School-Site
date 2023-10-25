@@ -16,5 +16,6 @@ urlpatterns = [
     re_path(r'^educProc$', views.educProc, name='educProc'),
     re_path(r'^educProc2$', views.educProc2, name='educProc2'),
     re_path(r'^news$', views.news, name='news'),
+    re_path(r'^news/(?P<newId>\d+)/', views.news, name='news'),
     re_path(r'^mail$', views.mail, name='mail'),
 ]

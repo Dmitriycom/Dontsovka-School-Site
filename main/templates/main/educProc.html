@@ -13,12 +13,841 @@
 {%  block LinkView2 %}white{% endblock %}
 {%  block LinkView1 %}white{% endblock %}
 
-{%  block link %} <link rel="stylesheet" type="text/css" href=""> {% endblock %}
+{%  block link %} <link rel="stylesheet" type="text/css" href="{% static 'educProc/style.css' %}"> {% endblock %}
 
 {% block content %}
 
-  <h1 class="text-center">LinkViewEducProc!</h1>
+  {% if page == 0  %}
+    <p>Not found 0</p>
+  {% elif page == 1 %}
+    <p>Not found</p>
+  {% elif page == 2 %}
+    <div class="container mt-4">
+      <div class="row">
+        
+        <div class="col-md-1 mb-3  shadow-lg   flex-column justify-content-center">
+          <a href="{% url 'educProc' %}?page=2&number=1" class="btn btn-success mb-1 p-3 fw-bold {% if number == 1 %}active{% endif %}">1 <br>КЛАСС </a>
+          <a href="{% url 'educProc' %}?page=2&number=2" class="btn btn-success mb-1 p-3 fw-bold {% if number == 2 %}active{% endif %}">2 <br>КЛАСС</a>
+          <a href="{% url 'educProc' %}?page=2&number=3" class="btn btn-success mb-1 p-3 fw-bold {% if number == 3 %}active{% endif %}">3 <br>КЛАСС</a>
+          <a href="{% url 'educProc' %}?page=2&number=4" class="btn btn-success mb-1 p-3 fw-bold {% if number == 4 %}active{% endif %}">4 <br>КЛАСС</a>
+          <a href="{% url 'educProc' %}?page=2&number=5" class="btn btn-success mb-1 p-3 fw-bold {% if number == 5 %}active{% endif %}">5 <br>КЛАСС</a>
+          <a href="{% url 'educProc' %}?page=2&number=6" class="btn btn-success mb-1 p-3 fw-bold {% if number == 6 %}active{% endif %}">6 <br>КЛАСС</a>
+          <a href="{% url 'educProc' %}?page=2&number=7" class="btn btn-success mb-1 p-3 fw-bold {% if number == 7 %}active{% endif %}">7 <br>КЛАСС</a>
+          <a href="{% url 'educProc' %}?page=2&number=8" class="btn btn-success mb-1 p-3 fw-bold {% if number == 8 %}active{% endif %}">8 <br>КЛАСС</a>
+          <a href="{% url 'educProc' %}?page=2&number=9" class="btn btn-success mb-1 p-3 fw-bold {% if number == 9 %}active{% endif %}">9 <br>КЛАСС</a>
+        </div>
+        
 
- 
+        <div class="text-white justify-content-center d-flex mb-3 col-md-10">
+          <div class="col-md-8 themed-grid-col w-75">
+            <div class="table-responsive table-responsive-md">
+              {% if number == 1  %} 
+                <table class="table table-bordered text-center rou">
+                <thead>
+                  <tr class="table-light ">
+                    <th scope="col">Урок</th>
+                    <th scope="col">Понедельник</th>
+                    <th scope="col">Вторник</th>
+                    <th scope="col">Среда</th>
+                    <th scope="col">Четверг </th>
+                    <th scope="col">Пятница</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-succes">
+                    <th scope="row">1</th>
+                    <td>Разговор о важном</td>
+                    <td>Русс. язык</td>
+                    <td>Русс. язык</td>
+                    <td>Внеур. деят</td>   
+                    <td>Русс. язык</td>             
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">2</th>
+                    <td>Русс. язык</td>
+                    <td>Литер. чтение</td>
+                    <td>Литер. чтение</td>
+                    <td>Русс. язык</td>
+                    <td>Окруж. мир</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">3</th>
+                    <td>Литер. чтение</td>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Технология</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">4</th>
+                    <td>Математика</td>
+                    <td>Ф-ра</td>
+                    <td>ИЗО</td>
+                    <td>Музыка</td>
+                    <td>Ф-ра</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">5</th>
+                    <td>Окруж. мир</td>
+                    <td>Внеур. деят</td>
+                    <td>Ф-ра</td>
+                    <td>Литер. чтение</td>
+                    <td>Русс. язык</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">6</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">7</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">8</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+                </table>
+              {% elif number == 2 %}
+                <table class="table table-bordered text-center rou">
+                <thead>
+                  <tr class="table-light ">
+                    <th scope="col">Урок</th>
+                    <th scope="col">Понедельник</th>
+                    <th scope="col">Вторник</th>
+                    <th scope="col">Среда</th>
+                    <th scope="col">Четверг </th>
+                    <th scope="col">Пятница</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-succes">
+                    <th scope="row">1</th>
+                    <td>Разговор о важном</td>
+                    <td>Иност. язык</td>
+                    <td>Русс. язык</td>
+                    <td>Внеур. деят</td>   
+                    <td>Русс. язык</td>             
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">2</th>
+                    <td>Русс. язык</td>
+                    <td>Ф-ра</td>
+                    <td>Литер. чтение</td>
+                    <td>Русс. язык</td>
+                    <td>Технология</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">3</th>
+                    <td>Литер. чтение</td>
+                    <td>Русс. язык</td>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Иност. язык</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">4</th>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Музыка</td>
+                    <td>ИЗО</td>
+                    <td>Окруж. мир</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">5</th>
+                    <td>Ф-ра</td>
+                    <td>Литер. чтение</td>
+                    <td>Внеур. деят</td>
+                    <td>Ф-ра</td>
+                    <td>Литература</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">6</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">7</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">8</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+                </table>
+              {% elif number == 3 %}
+                <table class="table table-bordered text-center rou">
+                <thead>
+                  <tr class="table-light ">
+                    <th scope="col">Урок</th>
+                    <th scope="col">Понедельник</th>
+                    <th scope="col">Вторник</th>
+                    <th scope="col">Среда</th>
+                    <th scope="col">Четверг </th>
+                    <th scope="col">Пятница</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-succes">
+                    <th scope="row">1</th>
+                    <td>Разговор о важном</td>
+                    <td>Русс. язык</td>
+                    <td>Иност. язык</td>
+                    <td>Внеур. деят</td>   
+                    <td>Русс. язык</td>             
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">2</th>
+                    <td>Русс. язык</td>
+                    <td>Литер. чтение</td>
+                    <td>Русс. язык</td>
+                    <td>Иност. язык</td>
+                    <td>Окруж. мир</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">3</th>
+                    <td>Литер. чтение</td>
+                    <td>ИЗО</td>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Ф-ра</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">4</th>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Ф-ра</td>
+                    <td>Русс. язык</td>
+                    <td>Внеур. деят</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">5</th>
+                    <td>Информатика</td>
+                    <td>Ф-ра</td>
+                    <td>Окруж. мир</td>
+                    <td>Технология</td>
+                    <td>Музыка</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">6</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Литер. чтение</td>
+                    <td>Литер. чтение</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">7</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">8</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+                </table>
+              {% elif number == 4 %}
+              <table class="table table-bordered text-center rou">
+                <thead>
+                  <tr class="table-light ">
+                    <th scope="col">Урок</th>
+                    <th scope="col">Понедельник</th>
+                    <th scope="col">Вторник</th>
+                    <th scope="col">Среда</th>
+                    <th scope="col">Четверг </th>
+                    <th scope="col">Пятница</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-succes">
+                    <th scope="row">1</th>
+                    <td>Разговор о важном</td>
+                    <td>Русс. язык</td>
+                    <td>Русс. язык</td>
+                    <td>Внеур. деят</td>   
+                    <td>Иност. язык</td>             
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">2</th>
+                    <td>Русс. язык</td>
+                    <td>Литер. чтение</td>
+                    <td>Литер. чтение</td>
+                    <td>Русс. язык</td>
+                    <td>Русс. язык</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">3</th>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Ф-ра</td>
+                    <td>Литература</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">4</th>
+                    <td>Литература</td>
+                    <td>Окруж. мир</td>
+                    <td>ОРПК</td>
+                    <td>Математика</td>
+                    <td>Окруж. мир</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">5</th>
+                    <td>Музыка</td>
+                    <td>ИЗО</td>
+                    <td>Технология</td>
+                    <td>Иност. язык</td>
+                    <td>Внеур. деят</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">6</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Ф-ра</td>
+                    <td>Информатика</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">7</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">8</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+                </table>
+              {% elif number == 5 %}
+              <table class="table table-bordered text-center rou">
+                <thead>
+                  <tr class="table-light ">
+                    <th scope="col">Урок</th>
+                    <th scope="col">Понедельник</th>
+                    <th scope="col">Вторник</th>
+                    <th scope="col">Среда</th>
+                    <th scope="col">Четверг </th>
+                    <th scope="col">Пятница</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-succes">
+                    <th scope="row">1</th>
+                    <td>Разговор о важном</td>
+                    <td>Литература</td>
+                    <td>Русс. язык</td>
+                    <td>Русс. язык</td>   
+                    <td>Русс. язык</td>             
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">2</th>
+                    <td>Русс. язык</td>
+                    <td>Русс. язык</td>
+                    <td>Иност. язык</td>
+                    <td>Литература</td>
+                    <td>Технология</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">3</th>
+                    <td>Литература</td>
+                    <td>Биология</td>
+                    <td>География</td>
+                    <td>Иност. язык</td>
+                    <td>Музыка</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">4</th>
+                    <td>Иност. язык</td>
+                    <td>Технология</td>
+                    <td>Информатика</td>
+                    <td>Ф-ра</td>
+                    <td>ИЗО</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">5</th>
+                    <td>История</td>
+                    <td>ОДНК</td>
+                    <td>Ф-ра</td>
+                    <td>История</td>
+                    <td>Математика</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">6</th>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                    <td>Внеур. деят</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">7</th>
+                    <td>-</td>
+                    <td>Ф-ра</td>
+                    <td>-</td>
+                    <td>Внеур. деят</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">8</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+                </table>
+              {% elif number == 6 %}
+              <table class="table table-bordered text-center rou">
+                <thead>
+                  <tr class="table-light ">
+                    <th scope="col">Урок</th>
+                    <th scope="col">Понедельник</th>
+                    <th scope="col">Вторник</th>
+                    <th scope="col">Среда</th>
+                    <th scope="col">Четверг </th>
+                    <th scope="col">Пятница</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-succes">
+                    <th scope="row">1</th>
+                    <td>Разговор о важном</td>
+                    <td>Музыка</td>
+                    <td>Технология</td>
+                    <td>Математика</td>   
+                    <td>Технология</td>             
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">2</th>
+                    <td>Иност. язык</td>
+                    <td>География</td>
+                    <td>Математика</td>
+                    <td>История</td>
+                    <td>Русс. язык</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">3</th>
+                    <td>Математика</td>
+                    <td>Ф-ра</td>
+                    <td>Русс. язык</td>
+                    <td>Русс. язык</td>
+                    <td>Информатика</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">4</th>
+                    <td>История</td>
+                    <td>Русс. язык</td>
+                    <td>Литература</td>
+                    <td>Русс. язык</td>
+                    <td>Иност. язык</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">5</th>
+                    <td>Литература</td>
+                    <td>Биология</td>
+                    <td>ОДНК</td>
+                    <td>Математика</td>
+                    <td>Математика</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">6</th>
+                    <td>Русс. язык</td>
+                    <td>ИЗО</td>
+                    <td>Иност. язык</td>
+                    <td>Обществознание</td>
+                    <td>Внеур. деят</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">7</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Ф-ра</td>
+                    <td>Внеур. деят</td>
+                    <td>Литература</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">8</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+                </table>
+              {% elif number == 7 %}
+              <table class="table table-bordered text-center rou">
+                <thead>
+                  <tr class="table-light ">
+                    <th scope="col">Урок</th>
+                    <th scope="col">Понедельник</th>
+                    <th scope="col">Вторник</th>
+                    <th scope="col">Среда</th>
+                    <th scope="col">Четверг </th>
+                    <th scope="col">Пятница</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-succes">
+                    <th scope="row">1</th>
+                    <td>Разговор о важном</td>
+                    <td>Русс. язык</td>
+                    <td>Русс. язык</td>
+                    <td>Информатика</td>   
+                    <td>Геометрия</td>             
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">2</th>
+                    <td>Русс. язык</td>
+                    <td>Иност. язык</td>
+                    <td>Обществознание</td>
+                    <td>Русс. язык</td>
+                    <td>Алгебра</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">3</th>
+                    <td>Литература</td>
+                    <td>Геометрия</td>
+                    <td>Иност. язык</td>
+                    <td>Алгебра</td>
+                    <td>Теор. вероятности</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">4</th>
+                    <td>Алгебра</td>
+                    <td>История</td>
+                    <td>Литература</td>
+                    <td>Иност. язык</td>
+                    <td>Информатика</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">5</th>
+                    <td>Физика</td>
+                    <td>География</td>
+                    <td>История</td>
+                    <td>Технология</td>
+                    <td>География</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">6</th>
+                    <td>Технология</td>
+                    <td>Ф-ра</td>
+                    <td>ИЗО</td>
+                    <td>Музыка</td>
+                    <td>Ф-ра</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">7</th>
+                    <td>Биология</td>
+                    <td>Внеур. деят</td>
+                    <td>Физика</td>
+                    <td>Ф-ра</td>
+                    <td>Внеур. деят</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">8</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+                </table>
+              {% elif number == 8 %}
+              <table class="table table-bordered text-center rou">
+                <thead>
+                  <tr class="table-light ">
+                    <th scope="col">Урок</th>
+                    <th scope="col">Понедельник</th>
+                    <th scope="col">Вторник</th>
+                    <th scope="col">Среда</th>
+                    <th scope="col">Четверг </th>
+                    <th scope="col">Пятница</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-succes">
+                    <th scope="row">1</th>
+                    <td>Разговор о важном</td>
+                    <td>Геометрия</td>
+                    <td>Алгебра</td>
+                    <td>История</td>   
+                    <td>География</td>             
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">2</th>
+                    <td>Алгебра</td>
+                    <td>Русс. язык</td>
+                    <td>Информатика</td>
+                    <td>Геометрия</td>
+                    <td>Химия</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">3</th>
+                    <td>Иност. язык</td>
+                    <td>Иност. язык</td>
+                    <td>Ф-ра</td>
+                    <td>Информатика</td>
+                    <td>Литература</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">4</th>
+                    <td>Русс. язык</td>
+                    <td>Теор. вероятности</td>
+                    <td>Иност. язык</td>
+                    <td>Химия</td>
+                    <td>Алгебра</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">5</th>
+                    <td>Литература</td>
+                    <td>Технология</td>
+                    <td>Физика</td>
+                    <td>Русс. язык</td>
+                    <td>Ф-ра</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">6</th>
+                    <td>Физика</td>
+                    <td>Биология</td>
+                    <td>Музыка</td>
+                    <td>Биология</td>
+                    <td>ОБЖ</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">7</th>
+                    <td>Обществознание</td>
+                    <td>География</td>
+                    <td>История</td>
+                    <td>Внеур. деят</td>
+                    <td>-</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">8</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Внеур. деят</td>
+                    <td>Ф-ра</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+                </table>
+              {% elif number == 9 %}
+              <table class="table table-bordered text-center rou">
+                <thead>
+                  <tr class="table-light ">
+                    <th scope="col">Урок</th>
+                    <th scope="col">Понедельник</th>
+                    <th scope="col">Вторник</th>
+                    <th scope="col">Среда</th>
+                    <th scope="col">Четверг </th>
+                    <th scope="col">Пятница</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-succes">
+                    <th scope="row">1</th>
+                    <td>Разговор о важном</td>
+                    <td>География</td>
+                    <td>Химия</td>
+                    <td>Иност. язык</td>   
+                    <td>Внеур. деят</td>             
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">2</th>
+                    <td>Информатика</td>
+                    <td>Геометрия</td>
+                    <td>Русс. язык</td>
+                    <td>Ф-ра</td>
+                    <td>ОБЖ</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">3</th>
+                    <td>Ф-ра</td>
+                    <td>История</td>
+                    <td>Алгебра</td>
+                    <td>Химия</td>
+                    <td>История</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">4</th>
+                    <td>Русс. язык</td>
+                    <td>Иност. язык</td>
+                    <td>География</td>
+                    <td>Геометрия</td>
+                    <td>Литература</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">5</th>
+                    <td>Иност. язык</td>
+                    <td>Алгебра</td>
+                    <td>Литература</td>
+                    <td>Русс. язык</td>
+                    <td>Биология</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">6</th>
+                    <td>Обществознание</td>
+                    <td>Русс. язык</td>
+                    <td>Физика</td>
+                    <td>Физика</td>
+                    <td>Теор. вероятности</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">7</th>
+                    <td>Алгебра</td>
+                    <td>Литература</td>
+                    <td>Биология</td>
+                    <td>Внеур. деят</td>
+                    <td>Физика</td>
+                  </tr>
+                  <tr class="table-succes">
+                    <th scope="row">8</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Алгебра</td>
+                    <td>История (0,5)</td>
+                    <td>Технология</td>
+                  </tr>
+                </tbody>
+                </table>
+              {% endif %}
+          
+            </div>
+          </div>
+        </div>
 
+      </div>
+      
+    </div>
+  {% elif page == 3 %}
+    <div class="container mt-4">
+      <div class="text-white justify-content-center d-flex mb-3">
+        
+          <div class="table-responsive table-responsive-md">
+            <h1 class="text-black fw-normal text-center mb-4">Рассписание звонков<br> 5 - 9 классы</h1>
+              <table class="table table-bordered text-center">
+              <thead>
+                <tr class="bg-primary-subtle">
+                  <th scope="col">Урок</th>
+                    <th scope="col" colspan="2">Понедельник - пятница</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-purple">
+                  <th scope="row">1 урок</th>
+                  <td colspan="2">08:30 - 09:15</td>           
+                </tr>
+                <tr>
+                  <th scope="row">перемена</th>
+                  <td colspan="2" table-success>10 минут</td>
+                </tr>
+                <tr class="bg-purple">
+                  <th scope="row">2 урок</th>
+                  <td colspan="2">09:25 - 10:10</td>           
+                </tr>
+                <tr>
+                  <th scope="row" >перемена</th>
+                  <td colspan="2">20 минут</td>
+                </tr>
+                <tr class="bg-purple">
+                  <th scope="row">3 урок</th>
+                  <td colspan="2">10:30 - 11:15</td>           
+                </tr>
+                <tr>
+                  <th scope="row" >перемена</th>
+                  <td colspan="2">20 минут</td>
+                </tr>
+                <tr class="bg-purple">
+                  <th scope="row">4 урок</th>
+                  <td colspan="2">11:35 - 12:20</td>           
+                </tr>
+                <tr >
+                  <th scope="row">перемена</th>
+                  <td colspan="2">10 минут</td>
+                </tr>
+                <tr class="bg-purple">
+                  <th scope="row">5 урок</th>
+                  <td colspan="2">12:30 - 13:15</td>           
+                </tr>
+                <tr >
+                  <th scope="row">перемена</th>
+                  <td colspan="2">10 минут</td>
+                </tr>
+                <tr class="bg-purple">
+                  <th scope="row">6 урок</th>
+                  <td colspan="2">13:25 - 14:10</td>           
+                </tr>
+                <tr>
+                  <th scope="row">перемена</th>
+                  <td colspan="2">10 минут</td>
+                </tr>
+                <tr class="bg-purple">
+                  <th scope="row">7 урок</th>
+                  <td colspan="2">14:20 - 15:05</td>           
+                </tr>
+                <tr>
+                  <th scope="row">перемена</th>
+                  <td colspan="2">10 минут</td>
+                </tr>
+                <tr class="bg-purple">
+                  <th scope="row">8 урок</th>
+                  <td colspan="2">15:15 - 16:00</td>           
+                </tr>
+              </tbody>
+              </table>
+            </div>
+          </div>       
+    </div>
+  {% elif page == 4 %}
+    <p>Not found 4</p>
+  {% elif page == 5 %}
+    <p>Not found 5</p>
+  {% elif page == 6 %}
+    <p>Not found 6</p>
+  {% elif page == 7 %}
+    <p>Not found 7</p>
+  {% endif %}
+  
 {% endblock %}

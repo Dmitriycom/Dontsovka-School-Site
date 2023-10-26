@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import News
+from .models import News, Message
+from datetime import date
+
 
 def index(request):
     news = News.objects.all()
@@ -40,4 +42,13 @@ def news(request, newId=1):
     return render(request, "main/news.html", {"new": new, "news": news})
 
 def mail(request):
-    return render(request, "main/mail.html")
+    if request.method == "POST":
+        message = Message()
+        message.name = request.POST.get('Name')
+        message.email = request.POST.get('Email')
+        message.date = date.today() 
+        message.description = request.POST.get('Comment')
+        message.save()
+        return render(request, "main/mail.html")
+    else:
+        return render(request, "main/mail.html")

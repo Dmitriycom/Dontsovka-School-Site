@@ -13,12 +13,66 @@
 {%  block LinkView2 %}white{% endblock %}
 {%  block LinkView1 %}white{% endblock %}
 
-{%  block link %} <link rel="stylesheet" type="text/css" href=""> {% endblock %}
+{%  block link %} <link rel="stylesheet" type="text/css" href="{% static 'mail/style.css' %}"> {% endblock %}
 
 {% block content %}
+<style>
+  .input-box:hover {
+  transform: scale(1.1); 
+  transition: transform 0.3s; 
+}
+</style>
+  <div class="container mt-4 mb-4">
+    <div class="content shadow-lg">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Адрес</div>
+          <div class="text-one">с. Донцовка</div>
+          <div class="text-two">Ленина  55</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Телефон</div>
+          <div class="text-one">+7-959-525-33-43</div>
+          <div class="text-two"></div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one"> dontsovkaschool@mail.ru</div>
+        </div>
+      </div>
+      <div class="right-side mt-3">
+        <div class="topic-text">Отправьте нам сообщение</div>
+        <p>
+          Если у вас есть какие-то вопросы или предложения по сотрудничеству -
+          заполните форму ниже
+        </p>
+        <form method="post" action="{% url 'mail' %}">{% csrf_token %}
+          <div class="input-box">
+            <input type="text" name="Name" placeholder="Ваше имя" required/>
+          </div>
+          <div class="input-box">
+            <input type="email" name="Email" placeholder="Введите email" required />
+          </div>
+          <div class="input-box message-box">
+            <textarea placeholder="Сообщение" name="Comment" required ></textarea>
+          </div>
+          
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn bg-purple btn-lg mb-3">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
-  <h1 class="text-center">Mail!</h1>
+  <script
+    src="https://kit.fontawesome.com/fce9a50d02.js"
+    crossorigin="anonymous"
+  ></script>
+  
 
- 
 
-{% endblock %}
+{% endblock %}  

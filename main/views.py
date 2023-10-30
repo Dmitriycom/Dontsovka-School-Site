@@ -31,15 +31,15 @@ def educProc(request):
 def educProc2(request):
     return render(request, "main/educProc2.html")
 
-def news(request, newId=1):
+def news(request, newId=0):
     try:
         id = int(newId)
         new = News.objects.get(pk=id)
-    except:
-        id = 1
-        news = News.objects.get(pk=id)
-    news = News.objects.exclude(pk=id)
+    except (ValueError, News.DoesNotExist):
+        new = None
+    news = News.objects.order_by('-pk')[:]
     return render(request, "main/news.html", {"new": new, "news": news})
+
 
 def mail(request):
     if request.method == "POST":

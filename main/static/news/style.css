@@ -1,3 +1,9 @@
-.txt{
-    font-size: 14px;
+a {
+    text-decoration: none; 
+    color: inherit; 
+
+}
+
+body{
+    background-color: darkblue;
 }

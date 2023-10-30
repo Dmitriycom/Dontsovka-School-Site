@@ -17,9 +17,20 @@
 
 {% block content %}
 
- 
-<h1 class="text-center mt-3 mb-3">{{new.title}}</h1>
-  
+<div class="container px-4 mb-4 rounded shadow-lg">
+    <h1 class="text-center mt-3 mb-3">{{new.title}}</h1>
+    <div class="row gx-1">
+    <div class="col-lg">
+        <img src="{% static 'images/img_news/'%}{{new.path}}" class="rounded float-start mb-4" alt="image"  style="max-width: 100%;" height="auto" width="100%">
+    </div>
+    <div class="col-lg">
+        <div class="p-2 fs-4">
+            {{new.description}}
+        </div>
+    </div>
+    </div>
+</div>
+     
 
    
 

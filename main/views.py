@@ -4,7 +4,7 @@ from datetime import date
 
 
 def index(request):
-    news = News.objects.all()
+    news = News.objects.order_by('-pk')[:5]
     return render(request, "main/index.html",  {"news": news})
 
 def about(request):

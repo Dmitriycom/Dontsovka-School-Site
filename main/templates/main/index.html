@@ -1,7 +1,6 @@
 {% extends "main/base.html" %}
 {% load static %}
 
-
 {%  block LinkViewMain %}dark{% endblock %}
 {%  block LinkViewAbout %}white{% endblock %}
 {%  block LinkViewStudents %}white{% endblock %}
@@ -15,34 +14,60 @@
 
 {%  block link %} <link rel="stylesheet" type="text/css" href="{% static 'index/style.css' %}"> {% endblock %}
 
-{% block content %}
-  <div class="container mt-4">
-    <div class="d-flex justify-content-center align-items-center mb-3">
-      <a href="" class="l-news">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
-          <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
-          <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
-        </svg> НОВОСТИ
-      </a>
-    </div>
 
-    {% for item in news %}
-      <div class="row text-white justify-content-center d-flex mb-3">
-              <div class="col-md-8 themed-grid-col bg-light w-50 shadow-lg rounded border border-1">
+{% block content %}
+
+<div class="d-flex justify-content-center">
+    <img src="{% static 'images/god.png' %}" class="img-fluid h-100" alt="..." style="width: 100%; height: auto; max-height: 500px;">
+</div>
+
+<div class="container mt-4">
+  <div class="d-flex justify-content-around align-items-center mb-3">
+      <a href="" class="l-news">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+              <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+              <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+          </svg> НОВОСТИ
+      </a>
+      <div class="d-md-block d-none">
+        <a href="" class="l-news">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+            </svg> ИНФОРМАЦИЯ
+        </a>
+      </div>
+      
+  </div>
+
+  {% for item in news %}
+    {% with index=forloop.counter %}
+        <div class="row text-white justify-content-center d-flex mb-3">
+            <div class="col-md-8 themed-grid-col bg-light w-50 shadow-lg rounded border border-1">
                 <a href="news/{{item.id}}">
-                  <div class="row">
-                    <div class="col-12 col-md-6 mt-2 mb-2">
-                      <img src="{% static 'images/img_news/'%}{{item.path}}" alt="Картинка новости" class="img-fluid" width="200" height="120">
+                    <div class="row">
+                        <div class="col-12 col-md-6 mt-2 mb-2">
+                            <img src="{% static 'images/img_news/'%}{{item.path}}" alt="Картинка новости" class="img-fluid" width="300" height="120">
+                        </div>
+                        <div class="col-12 col-md-6 text-black order-md-first d-flex flex-column">
+                            <h3 class="text-start text-truncate overflow-hidden">{{ item.title }}</h3>
+                            <p class="text-start" style="max-height: 100px; overflow-y: auto;">{{ item.description }}</p>
+                            <p class="mt-auto text-start">{{ item.date }}</p>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-6 text-black order-md-first d-flex flex-column">
-                      <h3 class="text-start text-truncate overflow-hidden">{{ item.title }}</h3>
-                      <p class="text-start" style="max-height: 100px; overflow-y: auto;">{{ item.description }}</p>
-                      <p class="mt-auto text-start">{{ item.date }}</p>
-                    </div>
-                  </div>
                 </a>
             </div>
-      </div>
-    {% endfor %}
-  </div>
+            <div class="col-md-3 themed-grid-col d-md-block d-none">
+                {% if index >= 1 %}
+                    <img src="{% static 'images/info/'%}{{ imagesInfo|slice:index|last }}" alt="Картинка информации" class="d-block " height="100%"  width="100%">
+                {% endif %} 
+            </div>
+        </div>
+    {% endwith %}
+  {% endfor %}
+
+  
+</div>
+
+
 {% endblock %}

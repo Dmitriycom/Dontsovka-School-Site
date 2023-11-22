@@ -17,8 +17,13 @@
 
 {% block content %}
 
-  <h1 class="text-center">STUDENTS</h1>
-
+  {% if page == 1 %}
+    <p>Page not found</p>   
+  {% elif page == 2 %}
+    <p>Page not found 2</p>   
+  {% elif page == 3 %}
+    <p>Page not found 3</p>   
+  {% endif %}
  
 
 {% endblock %}

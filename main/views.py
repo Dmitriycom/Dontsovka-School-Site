@@ -5,14 +5,18 @@ from datetime import date
 
 def index(request):
     news = News.objects.order_by('-pk')[:5]
-    imagesInfo = ["teacher.png", "2023.png", "rasp.jpg", "rasp.jpg", "lgpy.png",]
+    imagesInfo = ["teacher.png", "sferum.jpg", "2023.png", "rasp.jpg", "lgpy.png",]
     return render(request, "main/index.html",  {'news': news, 'imagesInfo': imagesInfo} )
 
 def about(request):
     return render(request, "main/about.html")
 
 def students(request):
-    return render(request, "main/students.html")
+    try:
+        page = int(request.GET.get("page", 0))
+    except:
+        page = 1
+    return render(request, "main/students.html", {"page": page, })
 
 def parents(request):
     return render(request, "main/parents.html")
